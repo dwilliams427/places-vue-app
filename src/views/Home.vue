@@ -37,7 +37,7 @@
     </div>
     <div>
       <ul>
-        <li v-for="error in errors" v-bind="error">{{ error }}</li>
+        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
     </div>
   </div>
@@ -70,7 +70,7 @@ export default {
     createPlaces: function () {
       var params = {
         name: this.newPlaceName,
-        address: this.newPlaceAddres,
+        address: this.newPlaceAddress,
       };
       axios
         .post("/api/places", params)
